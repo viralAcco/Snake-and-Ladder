@@ -6,3 +6,4 @@
 <h1>{{ diceNumber }}</h1>
 
 <p *ngIf="isWinner">{{"Winner --> "+winner.playerNumber + " -- " + winner.name}}</p>
+<button [disabled]="!newGame" (click)="startNewGame()">Start New Game</button>

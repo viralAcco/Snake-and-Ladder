@@ -15,15 +15,17 @@ export class PlayerComponent {
   diceNum: number = 0;
   isWinner: boolean = false;
   winner: any;
+  newGame : boolean = this.controllerService.newGame;
   
   // visibility: boolean = this.currentPlayer;
   ngOnInit() {
-    this.players = this.controllerService.players
+    this.players = this.controllerService.players;
     this.currentPlayer = this.players[0];
     this.controllerService.winningEvent.subscribe((player) => {
       this.isWinner = true;
       this.winner = player;
       this.currentPlayer = undefined;
+      this.newGame = true;
     });
   }
 
@@ -37,5 +39,13 @@ export class PlayerComponent {
     this.controllerService.updatePosition(this.currentPlayer, this.diceNum);
     this.currentPlayer = this.controllerService.currentPlayer;
     this.diceNum = 0;
+  }
+
+  startNewGame(){
+    this.isWinner = false;
+    this.newGame = false;
+    this.diceNum = 0;
+    this.controllerService.startNewGame();
+    this.currentPlayer = this.controllerService.currentPlayer;
   }
 }

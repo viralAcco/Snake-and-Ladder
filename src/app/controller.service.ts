@@ -8,10 +8,11 @@ import { Player } from './player/player.model';
 })
 export class ControllerService {
   winner: any;
-  players: any;
+  players: Player[] = [];
   board: Board;
   winningEvent : EventEmitter<Player> = new EventEmitter();
   currentPlayer: any;
+  newGame: boolean = false;
 
   constructor() {
     this.board = BoardGenerator.addSnakesAndLadders();
@@ -49,6 +50,10 @@ export class ControllerService {
   startNewGame() {
     this.winner = undefined;
     this.currentPlayer = this.players[0];
+    this.players.forEach(e=> {
+      e.currentPosition = 0;
+      e.updatedPosition = 0;
+    });
   }
 
   t: number = 0;
@@ -63,10 +68,12 @@ export class ControllerService {
   updatePosition(player: Player, diceNum: number){
     player.updatedPosition = this.getUpdatedPosition(player, diceNum); 
     // console.log(player.updatedPosition);
+    player.updatedPosition = 100;
     if(player.updatedPosition > 100){
       player.updatedPosition = player.currentPosition;
       this.currentPlayer = this.nextPlayer();
     }else if(player.updatedPosition === 100){
+      this.newGame = true;
       this.winningEvent.emit(this.currentPlayer);
     }else{
       player.currentPosition = player.updatedPosition;
