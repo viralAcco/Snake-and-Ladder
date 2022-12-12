@@ -1,5 +1,11 @@
-.wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    border: 1px solid black;
-  }
+.grid-container{
+  display: grid;
+  grid-template-columns: repeat(10,auto);
+}
+.grid-item{
+  background-color: aliceblue;
+  border: 1px solid black;
+  padding: 8px;
+  font-size: 30px;
+  text-align: center;
+}

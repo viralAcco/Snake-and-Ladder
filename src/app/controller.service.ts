@@ -68,7 +68,7 @@ export class ControllerService {
   updatePosition(player: Player, diceNum: number){
     player.updatedPosition = this.getUpdatedPosition(player, diceNum); 
     // console.log(player.updatedPosition);
-    player.updatedPosition = 100;
+    // player.updatedPosition = 100;
     if(player.updatedPosition > 100){
       player.updatedPosition = player.currentPosition;
       this.currentPlayer = this.nextPlayer();
