@@ -1,0 +1,8 @@
+<div *ngFor="let player of players">
+    <h4>{{player.playerNumber + " -- " + player.name}}</h4>
+    <button [disabled]="player != currentPlayer || diceNum > 0 || isWinner" (click)="rollDice()">Roll Dice</button>
+    <p>{{"Updated Position --> " + player.updatedPosition}}</p>
+</div>
+<h1>{{ diceNumber }}</h1>
+
+<p *ngIf="isWinner">{{"Winner --> "+winner.playerNumber + " -- " + winner.name}}</p>
