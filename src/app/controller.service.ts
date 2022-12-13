@@ -65,7 +65,7 @@ export class ControllerService {
     this.currentPlayer = this.players[++this.t];
     return this.currentPlayer;
   }
-
+  previousPosition : any;
   updatePosition(player: Player, diceNum: number){
     player.updatedPosition = this.getUpdatedPosition(player, diceNum); 
     // console.log(player.updatedPosition);
@@ -75,8 +75,10 @@ export class ControllerService {
       this.currentPlayer = this.nextPlayer();
     }else if(player.updatedPosition === 100){
       this.newGame = true;
+      player.previousPosition = player.currentPosition;
       this.winningEvent.emit(this.currentPlayer);
     }else{
+      player.previousPosition = player.currentPosition;
       player.currentPosition = player.updatedPosition;
       this.currentPlayer = this.nextPlayer();
     }

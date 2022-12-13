@@ -9,7 +9,7 @@ table, td, tr{
 }
 
 td{
-  padding: 30px;
+  padding: 25px;
 }
 
 .snake{
@@ -18,4 +18,32 @@ td{
 
 .ladder{
   color: green;
+}
+
+.blue{
+  background: url("/../assets/blue.png") top left no-repeat;
+  background-repeat: no-repeat;
+  background-position: bottom 38px left 4px;
+  background-size: 20px;
+}
+
+.red{
+  background: url("/../assets/red.png") top right no-repeat;
+  background-repeat: no-repeat;
+  background-position: bottom 38px right 4px;
+  background-size: 17px;
+}
+
+.green{
+  background: url("/../assets/green.png") bottom left no-repeat ;
+  background-repeat: no-repeat;
+  background-position: bottom 2px left 4px;
+  background-size: 20px;
+}
+
+.purple{
+  background: url("/../assets/purple.png") bottom right no-repeat;
+  background-repeat: no-repeat;
+  background-position: bottom 2px right 4px;
+  background-size: 20px;
 }
