@@ -1,9 +1,10 @@
+
 <div *ngFor="let player of players">
     <h4>{{player.playerNumber + " -- " + player.name}}</h4>
-    <button [disabled]="player != currentPlayer || diceNum > 0 || isWinner" (click)="rollDice()">Roll Dice</button>
+    <button [disabled]="player != currentPlayer || diceNum > 0 || isWinner" (click)="rollDice()" id="dice">Roll Dice</button>
     <p>{{"Updated Position --> " + player.updatedPosition}}</p>
 </div>
-<h1>{{ diceNumber }}</h1>
+<h1 *ngIf="diceNumber">{{ "Dice: " + diceNumber }}</h1>
 
-<p *ngIf="isWinner">{{"Winner --> "+winner.playerNumber + " -- " + winner.name}}</p>
-<button [disabled]="!newGame" (click)="startNewGame()">Start New Game</button>
+<h3 *ngIf="isWinner">{{"Winner --> "+winner.playerNumber + " -- " + winner.name}}</h3>
+<button [disabled]="!newGame" (click)="startNewGame()" id="sng">Start New Game</button>

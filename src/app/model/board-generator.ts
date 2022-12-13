@@ -46,7 +46,7 @@ export class BoardGenerator{
         let snake4 : Snake = new Snake(58, 41);
         let snake5 : Snake = new Snake(61, 19);
         let snake6 : Snake = new Snake(86, 24);
-        let snake7 : Snake = new Snake(93, 73);
+        let snake7 : Snake = new Snake(93, 74);
         let snake8 : Snake = new Snake(95, 76);
         let snake9 : Snake = new Snake(98, 35);
 

@@ -11,6 +11,7 @@ export class ControllerService {
   players: Player[] = [];
   board: Board;
   winningEvent : EventEmitter<Player> = new EventEmitter();
+  playerEvent : EventEmitter<Player[]> = new EventEmitter();
   currentPlayer: any;
   newGame: boolean = false;
 
@@ -103,5 +104,9 @@ export class ControllerService {
 
   isLadderFound(position : number){
     return this.board.ladderMap.get(position);
+  }
+
+  updatePlayerEvent(){
+    this.playerEvent.emit(this.players);
   }
 }
