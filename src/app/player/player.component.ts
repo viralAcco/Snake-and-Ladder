@@ -37,7 +37,6 @@ export class PlayerComponent {
     this.diceNum = this.controllerService.rollDice();
     this.diceNumber = this.diceNum;
     this.controllerService.updatePosition(this.currentPlayer, this.diceNum);
-    this.controllerService.updatePlayerEvent();
     this.currentPlayer = this.controllerService.currentPlayer;
     this.diceNum = 0;
   }

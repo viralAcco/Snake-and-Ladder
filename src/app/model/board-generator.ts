@@ -36,7 +36,6 @@ export class BoardGenerator{
         ladderMap.set(ladder4.startPoint, ladder7);
         ladderMap.set(ladder5.startPoint, ladder8);
         ladderMap.set(ladder6.startPoint, ladder9);
-
         return ladderMap;
     }
     private static snakeMap() : Map<number, Snake>{
